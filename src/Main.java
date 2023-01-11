@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Задача 1");
         int year = 2100;
-        if (printYear(year) == true) {
+        if (printYear(year)) {
             System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
@@ -39,15 +39,16 @@ public class Main {
 
 
     public static String printOS(byte clientOS, int clientDeviceYear) {
+        int limitYear = 2015;
         switch (clientOS) {
             case 0:
-                if (clientDeviceYear >= 2015) {
+                if (clientDeviceYear >= limitYear) {
                     return "Установите версию приложения для iOS по ссылке";
                 } else {
                     return "Установите облегченную версию приложения для iOS по ссылке";
                 }
             case 1:
-                if (clientDeviceYear >= 2015) {
+                if (clientDeviceYear >= limitYear) {
                     return "Установите версию приложения для Android по ссылке";
                 } else {
                     return "Установите облегченную версию приложения для Android по ссылке";
@@ -58,10 +59,10 @@ public class Main {
     }
 
     public static boolean printYear(int year) {
-                if (( year % 4 == 0 && year % 100 == 0 && year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
-                    return true;
-                } else {
-                    return false;
+        if (( year % 4 == 0 && year % 100 == 0 && year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
